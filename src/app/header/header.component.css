@@ -1,0 +1,40 @@
+body{
+    
+    background-color: #143666;
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+button{
+    background-color: #143666;
+    border: 2px solid yellow;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 25px; 
+}
+
+.colonne{
+    list-style-type: none;
+    padding-left: 25px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.li1{
+    margin-top: 43px;
+    display:block;
+    float:left;
+}
+
+.li2{
+    margin-top: 43px;
+    margin-right:25px;
+    display:block;
+    float:right;
+}
