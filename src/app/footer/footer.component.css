@@ -1,0 +1,33 @@
+body
+{
+    background-color: #143666;
+    font-family: sans-serif;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15%;
+}
+
+#nome_annoCreazione
+{
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+#nomeApp
+{
+    width: 140px;
+    height: 140;
+}
+
+#logoApp
+{
+    width: 50px;
+    height: 50;
+}
+
+.nome
+{
+    margin-left: 10px;
+    font-style: italic;
+}
