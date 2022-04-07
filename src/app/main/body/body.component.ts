@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import filmList from './filmList.json';
 
 @Component({
   selector: 'app-body',
