@@ -9,9 +9,9 @@
         <li class="l1">
         <ul class="list">
             <li class="l2">{{film.title}}</li>
-            <li>Genere <span style="color:gold;">{{film.genres.names.name}}</span></li> 
+             <li>Genere <span style="color:gold;">{{film.genres.names[0].name}}<!--, <span *ngIf="film.genres.names[1].name;">{{film.genres.names[1].name}}</span>--></span></li>  
             <li>Regia <span style="color:#143666;">{{film.info_director}}</span></li>
-            <li>Cast <span style="color:#143666;">{{film.info_director}}</span></li> 
+            <li>Cast <span style="color:#143666;" >{{limit(film.info_cast,20)}}...</span></li> 
             <li>Durata <span style="color:#143666;">{{film.info_runningtime}}</span></li>
 
             <li>
@@ -22,7 +22,7 @@
                         <div style="color:gold;">2D</div></li>
                 </ul>
             </li>
-            <li><p style="line-height: 50px;">OGGI <span style="color:gold;">{{today}}</span></p></li>
+            <li><p style="line-height: 50px;">OGGI <span style="color:gold;">{{limit(today.toString(),15)}}</span></p></li>
             </ul></li>
         </ul>
     <button type="button" style="padding-top: 300px;"><u>scheda film</u></button>
