@@ -3,16 +3,16 @@
         
         <ul class="colonne">
         <li class="l1">
-        <img src={{film[0].image_poster}} alt="copertina" height="250px" width="175px" style="padding-left:0px;"/>
+        <img src={{film.image_poster}} alt="copertina" height="250px" width="175px" style="padding-left:0px;"/>
         </li>
         <li class="l1"><button type="button" style="padding-top: 200px;"><img src="/assets/immagini/icon1.png" alt="trailer" height="50px" width="50px"></button></li>
         <li class="l1">
         <ul class="list">
-            <li class="l2">{{film[0].title}}</li>
-            <li>Genere <span style="color:gold;">{{film[0].genres.names.name}}</span></li> 
-            <li>Regia <span style="color:#143666;">{{film[0].info_director}}</span></li>
-            <li>Cast <span style="color:#143666;">{{film[0].info_cast}}</span></li> 
-            <li>Durata <span style="color:#143666;">{{film[0].info_runningtime}}</span></li>
+            <li class="l2">{{film.title}}</li>
+            <li>Genere <span style="color:gold;">{{film.genres.names.name}}</span></li> 
+            <li>Regia <span style="color:#143666;">{{film.info_director}}</span></li>
+            <li>Cast <span style="color:#143666;">{{film.info_director}}</span></li> 
+            <li>Durata <span style="color:#143666;">{{film.info_runningtime}}</span></li>
 
             <li>
                 <ul class="list2">
@@ -27,61 +27,5 @@
         </ul>
     <button type="button" style="padding-top: 300px;"><u>scheda film</u></button>
    <button type="button" style="padding-top: 50px;"><span style="color:gold;">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
-     
-   <ul class="colonne">
-    <li class="l1">
-    <img src={{film[1].image_poster}} alt="copertina" height="250px" width="175px" style="padding-left:0px;"/>
-    </li>
-    <li class="l1"><button type="button" style="padding-top: 200px;"><img src="/assets/immagini/icon1.png" alt="trailer" height="50px" width="50px"></button></li>
-    <li class="l1">
-    <ul class="list">
-        <li class="l2">{{film[1].title}}</li>
-        <li>Genere <span style="color:gold;">{{film[1].genres.names.name}}</span></li> 
-        <li>Regia <span style="color:#143666;">{{film[1].info_director}}</span></li>
-        <li>Cast <span style="color:#143666;">{{film[1].info_cast}}</span></li> 
-        <li>Durata <span style="color:#143666;">{{film[1].info_runningtime}}</span></li>
-
-        <li>
-            <ul class="list2">
-                <li style="margin-left: 0px;">17:30
-                    <div style="color: gold;">2D</div></li><li>19:30
-                    <div style="color:gold;">2D</div></li><li>20:30
-                    <div style="color:gold;">2D</div></li>
-            </ul>
-        </li>
-        <li><p style="line-height: 50px;">OGGI <span style="color:gold;">{{today}}</span></p></li>
-        </ul></li>
-    </ul>
-<button type="button" style="padding-top: 300px;"><u>scheda film</u></button>
-<button type="button" style="padding-top: 50px;"><span style="color:gold;">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
-
-
-<ul class="colonne">
-        <li class="l1">
-        <img src={{film[2].image_poster}} alt="copertina" height="250px" width="175px" style="padding-left:0px;"/>
-        </li>
-        <li class="l1"><button type="button" style="padding-top: 200px;"><img src="/assets/immagini/icon1.png" alt="trailer" height="50px" width="50px"></button></li>
-        <li class="l1">
-        <ul class="list">
-            <li class="l2">{{film[2].title}}</li>
-            <li>Genere <span style="color:gold;">{{film[2].genres.names.name}}</span></li> 
-            <li>Regia <span style="color:#143666;">{{film[2].info_director}}</span></li>
-            <li>Cast <span style="color:#143666;">{{film[2].info_cast}}</span></li> 
-            <li>Durata <span style="color:#143666;">{{film[2].info_runningtime}}</span></li>
-
-            <li>
-                <ul class="list2">
-                    <li style="margin-left: 0px;">17:30
-                        <div style="color: gold;">2D</div></li><li>19:30
-                        <div style="color:gold;">2D</div></li><li>20:30
-                        <div style="color:gold;">2D</div></li>
-                </ul>
-            </li>
-            <li><p style="line-height: 50px;">OGGI <span style="color:gold;">{{today}}</span></p></li>
-            </ul></li>
-        </ul>
-    <button type="button" style="padding-top: 300px;"><u>scheda film</u></button>
-   <button type="button" style="padding-top: 50px;"><span style="color:gold;">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
-
     </div>
 </div>

@@ -12,8 +12,21 @@ export class BodyComponent implements OnInit {
   filmList:any[]=[];
   timeElapsed: any=Date.now();
   today: Date= new Date(this.timeElapsed);
-  constructor() { }
+
+               //importo il servizio
+  constructor(private rs : RestService) { }
   ngOnInit(): void {
+    /* toPromise
+    //metodo nel RestService                   any come oggetto
+    this.rs.getMovieData().toPromise().then((response:any) =>{
+      this.filmList = response.films;
+    });*/
+
+    //proviamo l'observable
+    this.rs.getMovieData().subscribe((response: any) => {
+      this.filmList = response.films;
+    })
+
     console.log(this.filmList);
   }
 
