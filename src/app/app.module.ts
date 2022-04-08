@@ -8,6 +8,7 @@ import { FooterComponent } from './main/footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { BodyComponent } from './main/body/body.component';
 import { CarouselComponent } from './main/carousel/carousel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CarouselComponent } from './main/carousel/carousel.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@ import { BodyComponent } from './body.component';
 describe('BodyComponent', () => {
   let component: BodyComponent;
   let fixture: ComponentFixture<BodyComponent>;
-
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ BodyComponent ]

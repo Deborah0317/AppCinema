@@ -2,17 +2,18 @@
     background-color: #6d8ac6;
     font-family: sans-serif;
     font-size: 14px;
-    text-align: left;
+    text-align: center;
     min-height: 700px;
     max-height:fit-content;
 }
 
 .container{
-    padding: 150px;
+    padding: 50px;
     padding-top: 50px;
 }
 
 .colonne{
+    text-align: left;
     list-style-type: none;
     align-items: left;
     vertical-align: middle;
@@ -27,7 +28,7 @@
 .l2{
     padding-bottom: 50px;
     font-weight: bold;
-    color: yellow;
+    color:gold;
 }
 
 button{
@@ -61,9 +62,11 @@ button{
     line-height: 20px;
     display:block;
     float:left;
-    border: 2px solid yellow;
+    border: 2px solid gold;
 }
 
 u{
-    color: white;
+    padding-left: 150px;
+    color: #143666;
+    font-size: 14px;
 }
