@@ -9,23 +9,43 @@
         <li class="l1">
         <ul class="list">
             <li class="l2">{{film.title}}</li>
-             <li>Genere <span style="color:gold;">{{film.genres.names[0].name}}<!--, <span *ngIf="film.genres.names[1].name;">{{film.genres.names[1].name}}</span>--></span></li>  
+            <li>Genere <span style="color:gold;" *ngFor="let name of film.genres.names; let b = index"><span *ngIf="b==0; else elsep">{{name.name}}</span><ng-template #elsep>, {{name.name}}</ng-template></span></li>  
             <li>Regia <span style="color:#143666;">{{film.info_director}}</span></li>
             <li>Cast <span style="color:#143666;" >{{limit(film.info_cast,20)}}...</span></li> 
             <li>Durata <span style="color:#143666;">{{film.info_runningtime}}</span></li>
-
-            <li>
-                <ul class="list2">
-                    <li style="margin-left: 0px;">17:30
-                        <div style="color: gold;">2D</div></li><li>19:30
-                        <div style="color:gold;">2D</div></li><li>20:30
-                        <div style="color:gold;">2D</div></li>
-                </ul>
-            </li>
-            <li><p style="line-height: 50px;">OGGI <span style="color:gold;">{{limit(today.toString(),15)}}</span></p></li>
-            </ul></li>
+            </ul>
         </ul>
-    <button type="button" style="padding-top: 300px;"><u>scheda film</u></button>
-   <button type="button" style="padding-top: 50px;"><span style="color:gold;">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
+            <div *ngFor="let show of film.showings"> <!--spettacoli-->
+                <ul class="list2" *ngFor="let time of show.times; let a = index">
+                   <div *ngIf="show.date_short.slice(7,9)==today.getMonth()+1&&show.date_short.toString().slice(4,6)==today.toString().slice(8,10)"> <li *ngIf="a < 3">
+                       {{time.time}}
+                        <div class="type">{{time.screen_type}}</div></li></div>
+                </ul>
+            </div>
+            
+        <div *ngFor="let show of film.showings;">
+    <!--Se oggi c'è uno spettacolo-->
+    <p class="d" *ngIf="show.date_short.slice(7,9)==today.getMonth()+1&&show.date_short.toString().slice(4,6)==today.toString().slice(8,10)">OGGI <span style="color:gold;">{{limit(today.toString(),15)}}</span></p></div>
+   
+    <button type="button"><u>scheda film</u></button><br>
+
+    <!--mostra tutto-->
+    <script type="text/javascript">
+        function showStuff(id){
+          document.getElementById(id).style.visibility= hidden;
+        }
+        </script>
+   <button type="button" style="padding-top: 30px;" onclick="showStuff('times')"><span style="color:gold;">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
+   <span id="times">funziona ti prego</span>
+   <!-- <ng-template *ngFor="let show of film.showings;" id="times" style="display: none;">
+    {{show.date_long}}
+    <ng-template *ngFor="let time of show.times;">
+    <ul class="list2">
+        <div> <li>
+            {{time.time}}
+             <div class="type">{{time.screen_type}}</div></li></div>
+     </ul>
+   </ng-template>
+   </ng-template> -->
     </div>
 </div>

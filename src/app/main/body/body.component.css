@@ -47,14 +47,14 @@ button{
 }
 
 .list2{
+    margin-top: 200px;
     list-style-type: none;
-    padding-top: 20px;
-    padding-left: 0px;
-
 }
 
 .list2 li{
-    margin-left: 30px;
+    color: white;
+    margin-left: 40px;
+    margin-right: -20px;
     padding-left: 5px;
     padding-right: 70px;
     padding-top: 5px;
@@ -66,7 +66,24 @@ button{
 }
 
 u{
-    padding-left: 150px;
+    padding-left: 700px;
     color: #143666;
     font-size: 14px;
+}
+
+.d{
+    line-height: 50px; 
+    padding-top: 60px; 
+    padding-right: 130px;
+    color: white;
+    font-size: 16px;
+}
+
+.type{
+    color: gold;
+    padding-right: 18px;
+}
+
+.hidden{
+    visibility: hidden;
 }
