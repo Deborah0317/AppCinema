@@ -13,16 +13,16 @@ export class BodyComponent implements OnInit {
   i: any=0;
   timeElapsed: any=Date.now();
   today: Date= new Date(this.timeElapsed);
-  t: any = 0;
+  s = false;
    
+  showAndHide(){
+    this.s= !this.s;
+    return this.s;
+  }
 
    limit(str='', limit=0){
       return str.substring(0, limit);
     }
-
-   /*getMonthFromString(mon: any){
-      return new Date(Date.parse(mon +" 1, 2012")).getMonth()+1
-   }*/
 
    day(data: Date){
      let str= "";

@@ -30,13 +30,9 @@
     <button type="button"><u>scheda film</u></button><br>
 
     <!--mostra tutto-->
-    <script type="text/javascript">
-        function showStuff(id){
-          document.getElementById(id).style.visibility= hidden;
-        }
-        </script>
-   <button type="button" style="padding-top: 30px;" onclick="showStuff('times')"><span style="color:gold;">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
-   <span id="times">funziona ti prego</span>
+   <button type="button" style="padding-top: 30px;" onclick="showAndHide()"><span style="color:gold;">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
+   <span *ngIf="s==true">funziona ti prego</span>
+
    <!-- <ng-template *ngFor="let show of film.showings;" id="times" style="display: none;">
     {{show.date_long}}
     <ng-template *ngFor="let time of show.times;">
