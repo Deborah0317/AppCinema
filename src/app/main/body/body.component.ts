@@ -10,17 +10,11 @@ import { RestService } from 'src/app/rest.service';
 export class BodyComponent implements OnInit {
 
   filmList:any[]=[];
-  i: any=0;
   timeElapsed: any=Date.now();
   today: Date= new Date(this.timeElapsed);
-  s = false;
-   
-  showAndHide(){
-    this.s= !this.s;
-    return this.s;
-  }
-
-   limit(str='', limit=0){
+  s: any = false;
+  
+   limit(str: string, limit: any=0): string{
       return str.substring(0, limit);
     }
 

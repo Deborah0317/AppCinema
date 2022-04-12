@@ -26,6 +26,7 @@
 }
 
 .l2{
+    font-size: 18px;
     padding-bottom: 50px;
     font-weight: bold;
     color:gold;
@@ -47,7 +48,7 @@ button{
 }
 
 .list2{
-    margin-top: 200px;
+    padding-left: 330px;
     list-style-type: none;
 }
 
@@ -73,8 +74,8 @@ u{
 
 .d{
     line-height: 50px; 
-    padding-top: 60px; 
-    padding-right: 130px;
+    padding-top: 170px; 
+    padding-right: 450px;
     color: white;
     font-size: 16px;
 }
@@ -86,4 +87,56 @@ u{
 
 .hidden{
     visibility: hidden;
+}
+
+.gold{
+    color: gold;
+}
+
+.blue{
+    color: #143666;
+}
+
+.pt1{
+    padding-top: 30px;
+}
+
+.pt2{
+    padding-top: 200px;
+}
+
+.pl0{
+    padding-left: 0px;
+}
+
+.day{
+    padding-top: 150px;
+    padding-left: 80px;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.list3{
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.list3 li{
+    color: white;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 70px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    line-height: 20px;
+    display:block;
+    float:left;
+    border: 2px solid gold;
+    margin-left: 20px;
+}
+
+.sList{
+    list-style-type: none;
 }
