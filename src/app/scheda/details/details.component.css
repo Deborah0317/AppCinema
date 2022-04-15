@@ -1,0 +1,104 @@
+.icon{
+    padding-right: 300px;
+    padding-top: 300px;
+}
+
+.img{
+    box-shadow: 0 0 50px rgba(255,255,255,0.3);
+}
+
+.body{
+    font-family: sans-serif;
+    background-color: #304050;
+    /*background-image: url(banner.jpg); da dover estrapolare*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: white;
+    text-align: center;
+    min-height: 700px;
+    min-width: auto;
+}
+
+.container{
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.mainL{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.liM{
+    display: block;
+    float: left;
+}
+
+.noL{
+    list-style-type: none;
+    text-align: left;
+}
+
+.littleL{
+    list-style-type: none;
+    text-align: right;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+.l{
+    color: grey;
+    padding-bottom: 10px;
+}
+
+.t{
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    font-size: 35px;
+}
+
+.g{
+    color: grey;
+    padding-bottom: 30px;
+}
+
+.u{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.b{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding-left: 0px;
+}
+
+.bb{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-size: 23px;
+    border: 3px solid gold;
+    text-align: center;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+@keyframes glowing{
+    from{ box-shadow: 0 0 0px rgba(220, 180, 50, 0.8); 
+    text-shadow: 0 0 1px white;}
+    to{ box-shadow: 0 0 40px rgba(240, 180, 50, 0.8);
+    text-shadow: 0 0 2px white;}
+}
+
+.bb:hover{
+    animation: glowing 800ms forwards;
+}

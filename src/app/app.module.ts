@@ -9,6 +9,9 @@ import { MainComponent } from './main/main.component';
 import { BodyComponent } from './main/body/body.component';
 import { CarouselComponent } from './main/carousel/carousel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './main/form/form.component';
+import { SchedaComponent } from './scheda/scheda.component';
+import { DetailsComponent } from './scheda/details/details.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     MainComponent,
     BodyComponent,
-    CarouselComponent
+    CarouselComponent,
+    FormComponent,
+    SchedaComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
