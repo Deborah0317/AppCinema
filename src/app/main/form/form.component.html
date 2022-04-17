@@ -5,23 +5,23 @@
         </td>
         <td>
             <!--Scegli il cinema-->
-            <label for="exampleDataList" class="form-label">CINEMA</label>
-            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Scegli il cinema" disabled>
+            <label id="cinema" for="exampleDataList" class="form-label">CINEMA</label>
+            <input class="form-control" list="datalistOptions" id="cinema" placeholder="Scegli il cinema" disabled>
         </td>
         <td>
             <!--Scegli un film o un Extra-->
             <label for="exampleDataList" class="form-label">FILM EXTRA</label>
-            <input class="form-control" list="listaFilmExtra" id="filmExtra" placeholder="Scegli un film o un Extra">
+            <input class="form-control" list="listaFilmExtra" id="filmExtra" placeholder="Scegli un film o un Extra" onkeyup="gestioneInput()">
             <datalist id="listaFilmExtra">
                 <div *ngFor="let film of filmList">
-                    <option id="ScegliUnFilmExtra" value="{{film.title}}">
+                    <option id="listaDeiFilmExtra" value="{{film.title}}">
                 </div>
             </datalist>
         </td>
         <td>
             <!--Scegli la data-->
             <label for="exampleDataList" class="form-label">DATA</label>
-            <input class="form-control" list="listaDate" id="data" placeholder="Scegli la data" disabled>
+            <input class="form-control" list="listaDate" id="inputData" placeholder="Scegli la data" disabled>
             <datalist id="listaDate">
                 <div *ngFor="let film of filmList">
                     <div *ngFor="let show of film.showings">
@@ -33,7 +33,7 @@
         <td>
             <!--Scegli l'orario-->
             <label for="exampleDataList" class="form-label">ORARIO</label>
-            <input class="form-control" list="listaOrari" id="ora" placeholder="Scegli l'orario" disabled>
+            <input class="form-control" list="listaOrari" id="inputOra" placeholder="Scegli l'orario" disabled>
             <datalist id="listaOrari">
                 <div *ngFor="let film of filmList">
                     <div *ngFor="let show of film.showings">
@@ -46,7 +46,7 @@
         </td>
         <td>
             <!--Pulsante cerca-->
-            <button type="button" class="btn btn-primary">CERCA</button>
+            <button id="pulsante" type="button" class="btn btn-primary" onclick="avanti()" disabled>CERCA</button>
         </td>
     </tr>
 </table>

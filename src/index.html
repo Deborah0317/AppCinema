@@ -11,3 +11,24 @@
   <app-root></app-root>
 </body>
 </html>
+
+<!--Script per la gestione del form-->
+<script>
+  function gestioneInput()
+  {
+    let str = document.getElementById("filmExtra").value;
+    let lun = str.length;
+    if (str != undefined)
+    {
+      document.getElementById("pulsante").disabled = false;
+      document.getElementById("inputData").disabled = false;
+      document.getElementById("inputOra").disabled = false;
+    }
+    if (lun == 0)
+    {
+      document.getElementById("pulsante").disabled = true;
+      document.getElementById("inputData").disabled = true;
+      document.getElementById("inputOra").disabled = true;
+    }
+  }
+</script>

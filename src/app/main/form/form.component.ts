@@ -1,3 +1,4 @@
+import { getLocaleId } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 
@@ -13,9 +14,8 @@ export class FormComponent implements OnInit
   timeElapsed: any = Date.now();
   today: Date = new Date(this.timeElapsed);
   s: any = false;
-  selectFilm: boolean = false;
-  
-  
+
+
   limit(str: string, limit: any=0): string{
       return str.substring(0, limit);
     }
