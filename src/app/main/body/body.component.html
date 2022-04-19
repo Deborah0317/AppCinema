@@ -1,68 +1,68 @@
 <div class="body">
-    <div class="container" *ngFor="let film of filmList;"><div *ngIf="film.image_poster&&film.title&&film.info_director&&film.info_cast&&film.info_runningtime">
-        
-        <ul class="colonne">
-        <li class="l1">
-        <img src={{film.image_poster}} alt="copertina" height="250px" width="175px" class="pl0"/>
-        </li>
+  <div class="container" *ngFor="let film of filmList;"><div *ngIf="film.image_poster&&film.title&&film.info_director&&film.info_cast&&film.info_runningtime">
+      
+      <ul class="colonne">
+      <li class="l1">
+      <img src={{film.image_poster}} alt="copertina" height="250px" width="175px" class="pl0"/>
+      </li>
 
-        <!--trailer-->
+      <!--trailer-->
 
-        <li class="l1"><button type="button" class="pt2" (click)="t = !t"><img src="/assets/immagini/icon1.png" alt="trailer" height="50px" width="50px"></button></li>
-            <div *ngIf="t==true" class="popup">
-              <video width="460px" height="220px" controls>
-                <source src={{film.video}} type="video/mp4">
-              Your browser does not support the video tag.
-              </video> 
-              <div data-closable>
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button> 
-        </div>
-          </div>    
-        
+      <li class="l1"><button type="button" class="pt2" (click)="t = !t"><img src="/assets/immagini/icon1.png" alt="trailer" height="50px" width="50px"></button></li>
+          <div *ngIf="t==true" class="popup">
+            <video width="460px" height="220px" controls>
+              <source src={{film.video}} type="video/mp4">
+            Your browser does not support the video tag.
+            </video> 
+            <div data-closable>
+          <button class="close-button" aria-label="Close alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button> 
+      </div>
+        </div>    
+      
 
-        <li class="l1">
-        <ul class="list">
-            <li class="l2">{{film.title}}</li>
-            <li>Genere <span class="gold" *ngFor="let name of film.genres.names; let b = index"><span *ngIf="b==0; else elsep">{{name.name}}</span><ng-template #elsep>, {{name.name}}</ng-template></span></li>  
-            <li>Regia <span class="blue">{{film.info_director}}</span></li>
-            <li>Cast <span class="blue" *ngIf="film.info_cast">{{limit(film.info_cast,20)}}...</span></li> 
-            <li>Durata <span class="blue">{{film.info_runningtime}}</span></li>
-            </ul>
-        </ul>
+      <li class="l1">
+      <ul class="list">
+          <li class="l2">{{film.title}}</li>
+          <li>Genere <span class="gold" *ngFor="let name of film.genres.names; let b = index"><span *ngIf="b==0; else elsep">{{name.name}}</span><ng-template #elsep>, {{name.name}}</ng-template></span></li>  
+          <li>Regia <span class="blue">{{film.info_director}}</span></li>
+          <li>Cast <span class="blue" *ngIf="film.info_cast">{{limit(film.info_cast,20)}}...</span></li> 
+          <li>Durata <span class="blue">{{film.info_runningtime}}</span></li>
+          </ul>
+      </ul>
 
-        <div *ngFor="let show of film.showings;">
-    <!--Se oggi c'è uno spettacolo-->
-    <p class="d" *ngIf="show.date_short?.slice(7,9)==today.getMonth()+1&&show.date_short?.toString().slice(4,6)==today.toString().slice(8,10)">OGGI <span class="gold">{{limit(today.toString(),15)}}</span></p></div>
-            
-    <div *ngFor="let show of film.showings"> <!--spettacoli-->
-                <ul class="list2" *ngFor="let time of show.times; let a = index">
-                   <div *ngIf="show.date_short?.slice(7,9)==today.getMonth()+1&&show.date_short?.toString().slice(4,6)==today.toString().slice(8,10)"> <li *ngIf="a < 3">
-                       {{time.time}}
-                        <div class="type">{{time.screen_type}}</div></li></div>
-                </ul>
-            </div>
-            
-        
-   
-    <a [routerLink]="['/scheda', film.id]">
-    <u>scheda film</u></a><br>
+      <div *ngFor="let show of film.showings;">
+  <!--Se oggi c'è uno spettacolo-->
+  <p class="d" *ngIf="show.date_short?.slice(7,9)==today.getMonth()+1&&show.date_short?.toString().slice(4,6)==today.toString().slice(8,10)">OGGI <span class="gold">{{limit(today.toString(),15)}}</span></p></div>
+          
+  <div *ngFor="let show of film.showings"> <!--spettacoli-->
+              <ul class="list2" *ngFor="let time of show.times; let a = index">
+                 <div *ngIf="show.date_short?.slice(7,9)==today.getMonth()+1&&show.date_short?.toString().slice(4,6)==today.toString().slice(8,10)"> <li *ngIf="a < 3">
+                     {{time.time}}
+                      <div class="type">{{time.screen_type}}</div></li></div>
+              </ul>
+          </div>
+          
+      
+ 
+  <a [routerLink]="['/scheda', film.id]">
+  <u>scheda film</u></a><br>
 
-    <!--mostra tutto-->
-   <button type="button" class="pt1" (click)="s = !s"><span class="gold">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
+  <!--mostra tutto-->
+ <button type="button" class="pt1" (click)="s = !s"><span class="gold">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
 <div *ngIf="s==true">
-    <div *ngFor="let show of film.showings;">
-    <p class="day">{{show.date_long}}</p><ul class="sList">
-       <li><div *ngFor="let time of show.times;">
-        <ul class="list3">
-            <div> <li>
-            {{time.time}}
-             <div class="type">{{time.screen_type}}</div></li></div>
-        </ul>
-        </div></li>
-    </ul>
-    </div>
+  <div *ngFor="let show of film.showings;">
+  <p class="day">{{show.date_long}}</p><ul class="sList">
+     <li><div *ngFor="let time of show.times;">
+      <ul class="list3">
+          <div> <li>
+          {{time.time}}
+           <div class="type">{{time.screen_type}}</div></li></div>
+      </ul>
+      </div></li>
+  </ul>
+  </div>
 </div>
 </div>
 </div>
