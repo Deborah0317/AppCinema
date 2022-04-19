@@ -1,7 +1,7 @@
 <div class="body">
     <div class="container">
     <ul class="mainL">
-        <li class="liM"><img src="..." alt="Trailer" height="70px" width="70px" class="icon" /></li>
+        <li class="liM"><button type="button" class="b"><img src="/assets/immagini/icon1.png" alt="Trailer" height="70px" width="70px" class="icon" /></button></li>
         <li class="liM">
             <img src="..." alt="Copertina" height="250px" width="170px" class="img"/>
             <br>
@@ -19,14 +19,13 @@
         </li>
         <li class="liM">
             <ul class="noL">
-            <li class="t">Titolo</li>
+            <li class="t">{{id}}</li>
             <li class="g">Generi</li>
             <li>Trama</li>
             <li class="u"><button type="button" class="b"><u>Leggi tutto</u></button></li>
-                <li class="g">Spettacoli in programmazione di</li>
+                <li class="g">Spettacoli in programmazione del {{limit(today.toString(),15)}}</li>
             <li><button type="button" class="bb">Vedi gli orari di tutti i giorni</button></li>
             </ul>
         </li>
-        
         </ul>
     </div></div>

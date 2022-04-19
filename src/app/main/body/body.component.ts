@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
+import { DataService } from 'src/app/data.service';
 
 
 @Component({
@@ -13,6 +14,8 @@ export class BodyComponent implements OnInit {
   timeElapsed: any=Date.now();
   today: Date= new Date(this.timeElapsed);
   s: any = false;
+  t: any = false;
+  id: any=3;
   
    limit(str: string, limit: any=0): string{
       return str.substring(0, limit);
@@ -23,9 +26,15 @@ export class BodyComponent implements OnInit {
      return str = data.getDay()+"."+data.getMonth();
   }
 
+    // sendId(){
+    //   return this.id;
+    // }
+
                //importo il servizio
-  constructor(private rs : RestService) { }
+  constructor(private rs : RestService, private ds: DataService) { }
   ngOnInit(): void {
+    this.ds.sharedId.subscribe(id => this.id = id);
+   
     /* toPromise
     //metodo nel RestService                   any come oggetto
     this.rs.getMovieData().toPromise().then((response:any) =>{
@@ -37,6 +46,10 @@ export class BodyComponent implements OnInit {
       this.filmList = response.films;
     });
     console.log(this.filmList);
+  }
+
+  newId(){
+    this.ds.nextId(5);
   }
 
 }
