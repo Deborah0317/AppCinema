@@ -46,7 +46,8 @@
             
         
    
-    <button type="button" onclick="location.href = 'scheda'; nextId(5);"><u>scheda film</u></button><br>
+    <a [routerLink]="['/scheda', film.id]">
+    <u>scheda film</u></a><br>
 
     <!--mostra tutto-->
    <button type="button" class="pt1" (click)="s = !s"><span class="gold">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>

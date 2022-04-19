@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/data.service';
+import { RestService } from 'src/app/rest.service';
 
 @Component({
   selector: 'app-details',
@@ -8,6 +10,7 @@ import { DataService } from 'src/app/data.service';
 })
 export class DetailsComponent implements OnInit {
 
+  filmList: any[]=[];
   id: any;
   timeElapsed: any=Date.now();
   today: Date= new Date(this.timeElapsed);
@@ -21,14 +24,24 @@ export class DetailsComponent implements OnInit {
    return str = data.getDay()+"."+data.getMonth();
   }
 
-  constructor(private ds: DataService) { }
+  
+  constructor(private ds: DataService, private ar: ActivatedRoute, private rs: RestService) { }
   ngOnInit(): void {
+    this.rs.getMovieData().subscribe((response: any) => {
+      this.filmList = response.films;
+    });
+
+    this.ar.params.subscribe((response: any)=>{
+      this.id= +response['id'];
+    })
+
+    
+
+    //this.ds.sharedId.subscribe(id => this.id = id);
    
-    this.ds.sharedId.subscribe(id => this.id = id);
-   
-    //    this.ds.getId().subscribe((response: any) => {
-    //    this.id=response;
-    //  });
+      //   this.ds.getId().subscribe((response: any) => {
+      //   this.id=response;
+      // });
      console.log(this.id);
   }
 

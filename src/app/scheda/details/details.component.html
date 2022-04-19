@@ -1,9 +1,10 @@
-<div class="body">
+<div *ngFor="let film of filmList">
+    <div class="body" *ngIf="film.id==id">
     <div class="container">
     <ul class="mainL">
         <li class="liM"><button type="button" class="b"><img src="/assets/immagini/icon1.png" alt="Trailer" height="70px" width="70px" class="icon" /></button></li>
         <li class="liM">
-            <img src="..." alt="Copertina" height="250px" width="170px" class="img"/>
+            <img src={{film.image_poster}} alt="Copertina" height="200px" width="120px" class="img"/>
             <br>
             <ul class="littleL">
             <li><b>Data di uscita</b></li>
@@ -19,7 +20,7 @@
         </li>
         <li class="liM">
             <ul class="noL">
-            <li class="t">{{id}}</li>
+            <li class="t">Titolo</li>
             <li class="g">Generi</li>
             <li>Trama</li>
             <li class="u"><button type="button" class="b"><u>Leggi tutto</u></button></li>
@@ -28,4 +29,4 @@
             </ul>
         </li>
         </ul>
-    </div></div>
+    </div></div></div>

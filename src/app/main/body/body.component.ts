@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 import { DataService } from 'src/app/data.service';
+import { of } from 'rxjs';
 
 
 @Component({
@@ -26,14 +27,14 @@ export class BodyComponent implements OnInit {
      return str = data.getDay()+"."+data.getMonth();
   }
 
-    // sendId(){
-    //   return this.id;
-    // }
+    //  sendId(){
+    //    return of(this.id);
+    //  }
 
                //importo il servizio
   constructor(private rs : RestService, private ds: DataService) { }
   ngOnInit(): void {
-    this.ds.sharedId.subscribe(id => this.id = id);
+    // this.ds.sharedId.subscribe(id => this.id = id);
    
     /* toPromise
     //metodo nel RestService                   any come oggetto
@@ -48,8 +49,8 @@ export class BodyComponent implements OnInit {
     console.log(this.filmList);
   }
 
-  newId(){
-    this.ds.nextId(5);
-  }
+  // newId(){
+  //   this.ds.nextId(5);
+  // }
 
 }
