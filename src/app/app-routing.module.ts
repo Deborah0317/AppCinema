@@ -17,11 +17,7 @@ const routes: Routes = [{
 {
   path:'scheda/:id',
   component: SchedaComponent
-},
- { path: 'scheda',
-   component: SchedaComponent
- }
-];
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

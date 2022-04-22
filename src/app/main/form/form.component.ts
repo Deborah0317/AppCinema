@@ -1,5 +1,5 @@
 import { getLocaleId } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵNG_ELEMENT_ID } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 
 
@@ -15,6 +15,23 @@ export class FormComponent implements OnInit
   today: Date = new Date(this.timeElapsed);
   s: any = false;
 
+  // gestioneInput()
+  // {
+  //   let str = document.getElementById("filmExtra").value;
+  //   let lun = str.length;
+  //   if (str != undefined)
+  //   {
+  //     document.getElementById("pulsante").disabled = false;
+  //     document.getElementById("inputData").disabled = false;
+  //     document.getElementById("inputOra").disabled = false;
+  //   }
+  //   if (lun == 0)
+  //   {
+  //     document.getElementById("pulsante").disabled = true;
+  //     document.getElementById("inputData").disabled = true;
+  //     document.getElementById("inputOra").disabled = true;
+  //   }
+  // }
 
   limit(str: string, limit: any=0): string{
       return str.substring(0, limit);

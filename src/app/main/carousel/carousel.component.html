@@ -1,86 +1,13 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" aria-label="Slide 14"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="14" aria-label="Slide 15"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="15" aria-label="Slide 16"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="16" aria-label="Slide 17"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="17" aria-label="Slide 18"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="18" aria-label="Slide 19"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="19" aria-label="Slide 20"></button>
+<div *ngFor="let film of filmList; let k = index" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators" *ngIf="film.image_poster && film.title && film.info_director && film.info_cast && film.info_runningtime">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="se" class="active" aria-current="true" aria-label="Copertine film"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/ambulance/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 1">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/04/animali-fantastici-i-segreti-di-silente/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 2">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/corro-da-te/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 3">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/eddie-e-sunny/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 4">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/mancino-naturale/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 5">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/moonfall/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 6">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/morbius/ok/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 7">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/04/sonic-il-film-2/coverigok.jpg?sc=0.99" class="d-block w-100" alt="Slide 8">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/spencer/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 9">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/sword-art-online/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 10">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/01/the-batman/coverig-label.jpg?sc=0.99" class="d-block w-100" alt="Slide 11">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/troppo-cattivi/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 12">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/una-vita-in-fuga/coverlg.jpeg?sc=0.99" class="d-block w-100" alt="Slide 13">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/01/uncharted/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 14">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/04/bla-bla-baby/coverigok.jpg?sc=0.99" class="d-block w-100" alt="Slide 15">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/04/c-mon-c-mon/coverigok.jpg?sc=0.99" class="d-block w-100" alt="Slide 16">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/05/doctor-strange-nel-multiverso-della-follia/coverigok.jpg?sc=0.99" class="d-block w-100" alt="Slide 17">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/03/la-figlia-oscura/coverigok.jpg?sc=0.99" class="d-block w-100" alt="Slide 18">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/05/la-nuova-scuola-genovese/coverig.jpg?sc=0.99" class="d-block w-100" alt="Slide 19">
-    </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/04/vetro/coverigok.jpg?sc=0.99" class="d-block w-100" alt="Slide 20">
+  <div class="carousel-inner" *ngIf="film.image_poster && film.title && film.info_director && film.info_cast && film.info_runningtime">
+    <div class="carousel-item active" data-bs-interval="setTimeout()">
+      <div id="titoloDelFilm">
+        {{film.title}}
+      </div>
+      <img src="{{film.image_hero}}" class="d-block w-100" alt="Copertina del film">
     </div>
   </div>
 </div>
