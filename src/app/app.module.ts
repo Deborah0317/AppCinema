@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './main/form/form.component';
 import { SchedaComponent } from './scheda/scheda.component';
 import { DetailsComponent } from './scheda/details/details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { DetailsComponent } from './scheda/details/details.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

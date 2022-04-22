@@ -1,32 +1,46 @@
-<div *ngFor="let film of filmList">
-    <div class="body" *ngIf="film.id==id">
+
+    <div class="body" *ngIf="film" id="contenitoreFilm">
     <div class="container">
     <ul class="mainL">
         <li class="liM"><button type="button" class="b"><img src="/assets/immagini/icon1.png" alt="Trailer" height="70px" width="70px" class="icon" /></button></li>
         <li class="liM">
-            <img src={{film.image_poster}} alt="Copertina" height="200px" width="120px" class="img"/>
+            <img src={{film.image_poster}} alt="Copertina" height="200px" width="130px" class="img"/>
             <br>
             <ul class="littleL">
             <li><b>Data di uscita</b></li>
-                <li class="l">poi</li>
+                <li class="l">{{limit(film.ReleaseDate,10)}}</li>
             <li><b>Durata</b></li>
-                <li class="l">metto</li>
+                <li class="l">{{film.info_runningtime}}</li>
             <li><b>Regia</b></li>
-                <li class="l">tutto</li>
+                <li class="l">{{film.info_director.split(",",1)}}</li>
             <li><b>Cast</b></li>
-                <li class="l">giuro</li></ul>
+               <!-- <ng-template *ngFor="let a=0;"><li class="l" *ngIf="a<5">{{cast(film.info_cast)}}</li></ng-template>--> </ul> 
             
         
         </li>
         <li class="liM">
             <ul class="noL">
-            <li class="t">Titolo</li>
-            <li class="g">Generi</li>
-            <li>Trama</li>
-            <li class="u"><button type="button" class="b"><u>Leggi tutto</u></button></li>
+            <li class="t">{{film.title}}</li>
+            <li class="g"><span class="gold" *ngFor="let name of film.genres.names; let b = index"><span *ngIf="b==0; else elsep">{{name.name}}</span><ng-template #elsep>, {{name.name}}</ng-template></span></li>
+            <li class="tr"><div *ngIf="l==true; else Else">{{film.synopsis_short}}</div>
+                <ng-template #Else>{{limit(film.synopsis_short,100)}}...</ng-template></li>
+            <li class="u"><button type="button" class="b" (click)="l= !l"><u>Leggi tutto</u></button></li>
                 <li class="g">Spettacoli in programmazione del {{limit(today.toString(),15)}}</li>
-            <li><button type="button" class="bb">Vedi gli orari di tutti i giorni</button></li>
+
+            <li><button type="button" class="bb" (click)="s= !s">Vedi gli orari di tutti i giorni</button></li>
+            </ul></li>
             </ul>
-        </li>
-        </ul>
-    </div></div></div>
+            <div *ngIf="s==true">
+                <div *ngFor="let show of film.showings;">
+                <p class="day">{{show.date_long}}</p><ul class="sList">
+                   <li><div *ngFor="let time of show.times;">
+                    <ul class="list3">
+                        <div> <li>
+                        {{time.time}}
+                         <div class="type">{{time.screen_type}}</div></li></div>
+                    </ul>
+                    </div></li>
+                </ul>
+                </div>
+              </div>
+    </div></div>

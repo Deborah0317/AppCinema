@@ -12,7 +12,7 @@ export class CarouselComponent implements OnInit {
 
   filmList: any [] = [];
   num: number = 0;
-  selectedPosterToShow
+  // selectedPosterToShow
   
   constructor(private rs: RestService) { }
 

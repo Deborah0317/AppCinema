@@ -7,15 +7,15 @@ import { DetailsComponent } from './scheda/details/details.component';
 
 const routes: Routes = [{
   path:'',
-  redirectTo: 'main',
+  redirectTo: 'cinema',
   pathMatch: 'full'
 },
 {
-  path:'main',
+  path:'cinema',
   component: MainComponent
 },
 {
-  path:'scheda/:id',
+  path:'film/:id',
   component: SchedaComponent
 }];
 

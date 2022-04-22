@@ -8,6 +8,7 @@
 }
 
 .body{
+    align-content: center;
     font-family: sans-serif;
     background-color: #304050;
     /*background-image: url(banner.jpg); da dover estrapolare*/
@@ -17,17 +18,19 @@
     background-blend-mode: multiply;
     color: white;
     text-align: center;
-    min-height: 700px;
+    height:auto;
     min-width: auto;
 }
 
 .container{
+    min-height: 1250px;
     padding-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
 }
 
 .mainL{
+    height: auto;
     list-style-type: none;
     padding-left: 0px;
 }
@@ -38,11 +41,13 @@
 }
 
 .noL{
+    display:block;
     list-style-type: none;
     text-align: left;
 }
 
 .littleL{
+    display: block;
     list-style-type: none;
     text-align: right;
     font-size: 13px;
@@ -55,9 +60,9 @@
 }
 
 .t{
-    letter-spacing: 2px;
     padding-bottom: 10px;
-    font-size: 35px;
+    font-size: 30px;
+    max-width: 500px;
 }
 
 .g{
@@ -90,6 +95,47 @@
     padding-right: 90px;
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+.tr{
+    max-width: 500px;
+}
+
+.list3{
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.list3 li{
+    color: white;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 70px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    line-height: 20px;
+    display:block;
+    float:left;
+    border: 2px solid gold;
+    margin-left: 20px;
+}
+
+.sList{
+    list-style-type: none;
+}
+
+.day{
+    padding-top: 150px;
+    padding-left: 80px;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.type{
+    color: gold;
+    padding-right: 18px;
 }
 
 @keyframes glowing{
