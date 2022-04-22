@@ -40,11 +40,16 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.rs.getMovieData().subscribe((response: any) => {
       this.filmList = response.films;
-    });
-
     this.ar.params.subscribe((response: any)=>{
       this.id= +response['id'];
-    })
+      for(let film of this.filmList){
+        if(film.id==this.id){
+          
+        }
+      }
+    })});
+
+    
 
     
 

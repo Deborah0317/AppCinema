@@ -48,22 +48,6 @@
  
   <a [routerLink]="['/film', film.id]">
   <u>scheda film</u></a><br>
-
-  <!--mostra tutto-->
- <button type="button" class="pt1" (click)="s = !s"><span class="gold">+</span>MOSTRA GLI ORARI DI TUTTI I GIORNI</button>
-<div *ngIf="s==true">
-  <div *ngFor="let show of film.showings;">
-  <p class="day">{{show.date_long}}</p><ul class="sList">
-     <li><div *ngFor="let time of show.times;">
-      <ul class="list3">
-          <div> <li>
-          {{time.time}}
-           <div class="type">{{time.screen_type}}</div></li></div>
-      </ul>
-      </div></li>
-  </ul>
-  </div>
-</div>
 </div>
 </div>
 </div>

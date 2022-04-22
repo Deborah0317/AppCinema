@@ -18,12 +18,11 @@
     background-blend-mode: multiply;
     color: white;
     text-align: center;
-    height:auto;
+    height: 2800px;
     min-width: auto;
 }
 
 .container{
-    min-height: 1250px;
     padding-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
@@ -33,6 +32,7 @@
     height: auto;
     list-style-type: none;
     padding-left: 0px;
+    padding-top: 20px;
 }
 
 .liM{
@@ -62,7 +62,7 @@
 .t{
     padding-bottom: 10px;
     font-size: 30px;
-    max-width: 500px;
+    max-width: 480px;
 }
 
 .g{
@@ -91,24 +91,25 @@
     font-size: 23px;
     border: 3px solid gold;
     text-align: center;
-    padding-left: 90px;
-    padding-right: 90px;
+    padding-left: 70px;
+    padding-right: 70px;
     padding-bottom: 10px;
     padding-top: 10px;
+    margin-bottom:50px;
 }
 
 .tr{
-    max-width: 500px;
+    max-width: 480px;
 }
 
 .list3{
     list-style-type: none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .list3 li{
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 5px;
     padding-right: 70px;
     padding-top: 5px;
