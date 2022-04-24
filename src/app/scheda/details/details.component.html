@@ -2,7 +2,7 @@
     <div class="body" *ngIf="film" id="contenitoreFilm">
     <div class="container">
     <ul class="mainL">
-        <li class="liM"><button type="button" class="b"><img src="/assets/immagini/icon1.png" alt="Trailer" height="70px" width="70px" class="icon" /></button></li>
+        <li class="liM"><button type="button" class="b" (click)="openModal(template, film)"><img src="/assets/immagini/icon1.png" alt="Trailer" height="70px" width="70px" class="icon" /></button></li>
         <li class="liM">
             <img src={{film.image_poster}} alt="Copertina" height="200px" width="130px" class="img"/>
             <br>
@@ -14,7 +14,7 @@
             <li><b>Regia</b></li>
                 <li class="l">{{film.info_director.split(",",1)}}</li>
             <li><b>Cast</b></li>
-               <!-- <ng-template *ngFor="let a=0;"><li class="l" *ngIf="a<5">{{cast(film.info_cast)}}</li></ng-template>--> </ul> 
+                <div *ngFor="let a of array; let r = index"><li class="l" *ngIf="r<count">{{p[a]}}</li></div></ul> 
             
         
         </li>
@@ -44,3 +44,17 @@
                 </div>
               </div>
     </div></div>
+
+    <ng-template #template>
+        <div class="modal-header">
+          <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span class="x">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <video width="1080px" height="540px" controls>
+              <source src={{selectedTrailer}} type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+      </ng-template>

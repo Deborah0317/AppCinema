@@ -1,6 +1,37 @@
+.modal-body{
+    align-self: center;
+    align-items: center;
+    width: 1080px;
+    background-color:#1d2e4d;
+}
+.modal-header{
+    width: 1080px;
+    max-height: 10px;
+    background-color:#192231 ;
+    align-self: center;
+}
+
+.btn-close{
+    padding-top: 0px;
+    margin-bottom: 1px;
+    margin-right: -7px;
+}
+
+.x{
+    font-family: monospace;
+    color: white;
+    padding-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+video{
+    align-self: center;
+}
+
 .icon{
-    margin-right: 200px;
-    margin-top: 200px;
+    margin-right: 150px;
+    margin-top: 150px;
 }
 
 .img{
@@ -8,29 +39,28 @@
 }
 
 .body{
+    min-height: 700px;
     align-content: center;
     font-family: sans-serif;
     background-color: #304050;
-    /*background-image: url(banner.jpg); da dover estrapolare*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
     color: white;
     text-align: center;
-    height:auto;
-    min-width: auto;
+    min-width: 920px;
+    max-width: 100%;
+    padding-bottom: 200px;
 }
 
 .container{
-    min-height: 1250px;
     padding-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
 }
 
 .mainL{
-    height: auto;
     list-style-type: none;
     padding-left: 0px;
 }
@@ -41,6 +71,7 @@
 }
 
 .noL{
+    padding-left: 20px;
     display:block;
     list-style-type: none;
     text-align: left;
@@ -56,7 +87,7 @@
 
 .l{
     color: grey;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .t{
@@ -81,6 +112,7 @@
     color: white;
     font-size: 16px;
     padding-left: 0px;
+    padding-right: 0px;
 }
 
 .bb{
@@ -95,6 +127,7 @@
     padding-right: 90px;
     padding-bottom: 10px;
     padding-top: 10px;
+    margin-bottom: 300px;
 }
 
 .tr{
@@ -103,7 +136,7 @@
 
 .list3{
     list-style-type: none;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .list3 li{

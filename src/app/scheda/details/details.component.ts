@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { DataService } from 'src/app/data.service';
 import { RestService } from 'src/app/rest.service';
 
@@ -9,6 +10,7 @@ import { RestService } from 'src/app/rest.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit, AfterViewInit {
+  [x: string]: any;
 
   filmList: any[]=[];
   id: any;
@@ -17,6 +19,10 @@ export class DetailsComponent implements OnInit, AfterViewInit {
   l= false;
   s=false;
   film: any = "";
+  selectedTrailer: string = "";
+  array: any[]=[];
+  p: any[] = [];
+  count: any=0;
 
   limit(str: string, limit: any=0): string{
     return str.substring(0, limit);
@@ -29,13 +35,21 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   cast(str: any){
     let v= str;
-    let s: any="";
-     for(let i=0; i<5;i++){
-     s = s+"\n"+v.split(",",1);
+     for(let i=0; i<20;i++){
+     this.p[i]= v.split(",",1);
     v=v.slice(v.indexOf(",")+2);}
-    return s;
+    return this.p;
   }
 
+  check(str: any){
+    let v=str;
+    for(let i=0;i<10;i++){
+    if(v.includes(",")){
+      this.count++;
+      v=v.slice(v.indexOf(",")+2);}}
+  }
+
+  modalRef?: BsModalRef;
   
   constructor(private ds: DataService, private ar: ActivatedRoute, private rs: RestService) { }
   
@@ -45,6 +59,8 @@ export class DetailsComponent implements OnInit, AfterViewInit {
       ((document.getElementById("contenitoreFilm") as HTMLElement).style as any)['background-image'] = 'url('+this.film["image_hero"]+')';
     }, 1000);
   }
+
+
   ngOnInit(): void {
     this.rs.getMovieData().subscribe((response: any) => {
       this.filmList = response.films;
@@ -58,8 +74,19 @@ export class DetailsComponent implements OnInit, AfterViewInit {
           this.film = film;
         }
       }
+
+      for(let i=0;i<20;i++){
+        this.array[i]=i;
+      }
+
+      this.cast(this.film.info_cast);
+
+      this.check(this.film.info_cast);
     })
     });
+
+
+
 
     
     // this.ar.params.subscribe((response: any)=>{
@@ -74,6 +101,11 @@ export class DetailsComponent implements OnInit, AfterViewInit {
       //   this.id=response;
       // });
      console.log(this.id);
+    }
+
+  openModal(template: TemplateRef<any>, film: any) {
+    this.selectedTrailer = film.video;
+    this.modalRef = this.modalService.show(template);
   }
 
 }
