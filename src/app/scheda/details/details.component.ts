@@ -51,13 +51,14 @@ export class DetailsComponent implements OnInit, AfterViewInit {
 
   modalRef?: BsModalRef;
   
-  constructor(private ds: DataService, private ar: ActivatedRoute, private rs: RestService) { }
+  constructor(private ds: DataService, private ar: ActivatedRoute, private rs: RestService, private modalService: BsModalService) { }
   
   ngAfterViewInit(): void {
     setTimeout(() => {
       console.log(document.getElementById("contenitoreFilm"));
       ((document.getElementById("contenitoreFilm") as HTMLElement).style as any)['background-image'] = 'url('+this.film["image_hero"]+')';
-    }, 1000);
+    }, 1300);
+    console.log(this.m);
   }
 
 

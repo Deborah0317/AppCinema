@@ -6,7 +6,7 @@
 }
 .modal-header{
     width: 1080px;
-    max-height: 10px;
+    max-height: 50px;
     background-color:#192231 ;
     align-self: center;
 }
@@ -28,6 +28,7 @@
 video{
     align-self: center;
 }
+
 
 .icon{
     margin-right: 150px;

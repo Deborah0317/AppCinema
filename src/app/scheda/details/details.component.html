@@ -22,7 +22,7 @@
             <ul class="noL">
             <li class="t">{{film.title}}</li>
             <li class="g"><span class="gold" *ngFor="let name of film.genres.names; let b = index"><span *ngIf="b==0; else elsep">{{name.name}}</span><ng-template #elsep>, {{name.name}}</ng-template></span></li>
-            <li class="tr"><div *ngIf="l==true; else Else">{{film.synopsis_short}}</div>
+            <li class="tr"><div *ngIf="l==true||film.synopsis_short.length<200; else Else">{{film.synopsis_short}}</div>
                 <ng-template #Else>{{limit(film.synopsis_short,100)}}...</ng-template></li>
             <li class="u"><button type="button" class="b" (click)="l= !l"><u>Leggi tutto</u></button></li>
                 <li class="g">Spettacoli in programmazione del {{limit(today.toString(),15)}}</li>
