@@ -1,7 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 import { DataService } from 'src/app/data.service';
-import { of } from 'rxjs';
 import { TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 

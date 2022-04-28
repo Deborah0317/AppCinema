@@ -45,13 +45,12 @@
 
 <ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
     <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
+      <span class="x">x</span>
     </button>
   </div>
   <div class="modal-body">
-      <video width="460px" height="220px" controls>
+      <video width="1080px" height="540px" controls>
         <source src={{selectedTrailer}} type="video/mp4">
       Your browser does not support the video tag.
       </video>
