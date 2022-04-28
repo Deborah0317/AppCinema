@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 import { DataService } from 'src/app/data.service';
 import { of } from 'rxjs';
+import { TemplateRef } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -17,6 +19,7 @@ export class BodyComponent implements OnInit {
   s: any = false;
   t: any = false;
   id: any=3;
+  selectedTrailer: string = "";
   
    limit(str: string, limit: any=0): string{
       return str.substring(0, limit);
@@ -32,7 +35,9 @@ export class BodyComponent implements OnInit {
     //  }
 
                //importo il servizio
-  constructor(private rs : RestService, private ds: DataService) { }
+               modalRef?: BsModalRef;
+
+  constructor(private rs : RestService, private ds: DataService, private modalService: BsModalService) { }
   ngOnInit(): void {
     // this.ds.sharedId.subscribe(id => this.id = id);
    
@@ -47,6 +52,11 @@ export class BodyComponent implements OnInit {
       this.filmList = response.films;
     });
     console.log(this.filmList);
+  }
+
+  openModal(template: TemplateRef<any>, film: any) {
+    this.selectedTrailer = film.video;
+    this.modalRef = this.modalService.show(template);
   }
 
   // newId(){

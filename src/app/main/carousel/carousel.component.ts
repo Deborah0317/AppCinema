@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from 'src/app/rest.service';
 
 
 @Component({
@@ -9,10 +10,22 @@ import { Component, OnInit } from '@angular/core';
 
 export class CarouselComponent implements OnInit {
 
-  constructor() { }
+  filmList: any [] = [];
+  num: number = 0;
+  // selectedPosterToShow
+  
+  constructor(private rs: RestService) { }
+
 
   ngOnInit(): void {
-    
+    this.rs.getMovieData().subscribe((response: any) => {
+      this.filmList = response.films;
+    });
+
+    setTimeout(() => {
+	    this.num + 1;
+    }, 5000);
+
+    console.log(this.filmList);
   }
-  
 }

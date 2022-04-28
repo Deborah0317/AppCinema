@@ -14,8 +14,8 @@
     /*background-image: url(banner.jpg); da dover estrapolare*/
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: multiply;
+    background-size:cover;
+    background-blend-mode:overlay;
     color: white;
     text-align: center;
     height: 2800px;
