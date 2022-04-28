@@ -13,6 +13,7 @@ import { SchedaComponent } from './scheda/scheda.component';
 import { DetailsComponent } from './scheda/details/details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

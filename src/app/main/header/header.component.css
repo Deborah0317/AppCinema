@@ -70,13 +70,6 @@ button{
     float:left;
 }
 
-.li2{
-    margin-top: 25px;
-    margin-right:25px;
-    display:block;
-    float:right;
-}
-
 .li3{
     margin-top: 30px;
     margin-right:25px;
@@ -90,7 +83,25 @@ button{
     display:block;
     float:right;
 }
-.b1{
-    padding:0px; 
-    border:0px;
+
+.unknown{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ff3838;
+}
+
+.welcome{
+    color: #4084e4;
+    font-size: 30px;
+    padding-top: 25px;
+}
+
+.back{
+    color: gold;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 42px;
+    margin-right:25px;
+    display:block;
+    float:right;
 }
