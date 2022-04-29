@@ -1,5 +1,32 @@
-.body{
+.gradient-custom{
+    /* fallback for old browsers */
+    background: #6a11cb;
     
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgb(73, 17, 203), rgb(0, 94, 255));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgb(67, 17, 203), rgb(0, 94, 255));}
+
+.container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 500px;
+    background-color: #161b22;
+}
+
+.card-body{
+    padding-top: 10px;
+    color: aliceblue;
+    align-self: center;
+}
+
+.d-flex{
+    margin-bottom: -70px;
+}
+
+.body{
+    margin-top: -20px;
     background-color: #143666;
     font-family: sans-serif;
     color: white;
@@ -7,7 +34,7 @@
     font-size: 14px;
     text-align: center;
     min-height: 100px;
-    max-height: 100px;
+    max-height: 100%;
 }
 
 button{
@@ -43,13 +70,6 @@ button{
     float:left;
 }
 
-.li2{
-    margin-top: 25px;
-    margin-right:25px;
-    display:block;
-    float:right;
-}
-
 .li3{
     margin-top: 30px;
     margin-right:25px;
@@ -63,7 +83,25 @@ button{
     display:block;
     float:right;
 }
-.b1{
-    padding:0px; 
-    border:0px;
+
+.unknown{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ff3838;
+}
+
+.welcome{
+    color: #4084e4;
+    font-size: 30px;
+    padding-top: 25px;
+}
+
+.back{
+    color: gold;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 42px;
+    margin-right:25px;
+    display:block;
+    float:right;
 }

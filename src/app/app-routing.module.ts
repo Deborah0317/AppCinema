@@ -17,6 +17,10 @@ const routes: Routes = [{
 {
   path:'film/:id',
   component: SchedaComponent
+},
+{
+  path:'cinema/:user,:num',
+  component: MainComponent
 }];
 
 @NgModule({
