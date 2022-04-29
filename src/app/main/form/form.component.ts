@@ -14,24 +14,29 @@ export class FormComponent implements OnInit
   timeElapsed: any = Date.now();
   today: Date = new Date(this.timeElapsed);
   s: any = false;
+  filmSelected: any;
+  dateSelected: any;
+  timeSelected: any;
+  filmDisabled: any = false;
+  dateDisabled: any = false;
+  timeDisabled: any = false;
+  buttonDisabled: any = false;
 
-  // gestioneInput()
-  // {
-  //   let str = document.getElementById("filmExtra").value;
-  //   let lun = str.length;
-  //   if (str != undefined)
-  //   {
-  //     document.getElementById("pulsante").disabled = false;
-  //     document.getElementById("inputData").disabled = false;
-  //     document.getElementById("inputOra").disabled = false;
-  //   }
-  //   if (lun == 0)
-  //   {
-  //     document.getElementById("pulsante").disabled = true;
-  //     document.getElementById("inputData").disabled = true;
-  //     document.getElementById("inputOra").disabled = true;
-  //   }
-  // }
+  gestioneInput()
+  {
+    if (!this.filmSelected)
+    {
+      this.dateDisabled = true;
+      this.timeDisabled = true;
+      this.buttonDisabled = true;
+    }
+    else
+    {
+      this.dateDisabled = false;
+      this.timeDisabled = false;
+      this.buttonDisabled = false;
+    }
+  }
 
   limit(str: string, limit: any=0): string{
       return str.substring(0, limit);
@@ -45,6 +50,9 @@ export class FormComponent implements OnInit
 
   constructor(private rs: RestService) { }
   ngOnInit(): void {
+    this.dateDisabled = true;
+    this.timeDisabled = true;
+    this.buttonDisabled = true;
     this.rs.getMovieData().subscribe((response: any) => {
       this.filmList = response.films;
     });

@@ -11,7 +11,7 @@
         <td>
             <!--Scegli un film o un Extra-->
             <label for="exampleDataList" class="form-label">FILM EXTRA</label>
-            <input class="form-control" list="listaFilmExtra" id="filmExtra" placeholder="Scegli un film o un Extra" onkeyup="gestioneInput()">
+            <input class="form-control" list="listaFilmExtra" id="filmExtra" placeholder="Scegli un film o un Extra" (keyup)="gestioneInput()" [disabled]="filmDisabled" [(ngModel)]="filmSelected">
             <datalist id="listaFilmExtra">
                 <div *ngFor="let film of filmList">
                     <option id="listaDeiFilmExtra" value="{{film.title}}">
@@ -21,7 +21,7 @@
         <td>
             <!--Scegli la data-->
             <label for="exampleDataList" class="form-label">DATA</label>
-            <input class="form-control" list="listaDate" id="inputData" placeholder="Scegli la data" disabled>
+            <input class="form-control" list="listaDate" id="inputData" placeholder="Scegli la data" [disabled]="dateDisabled" [(ngModel)]="dateSelected">
             <datalist id="listaDate">
                 <div *ngFor="let film of filmList">
                     <div *ngFor="let show of film.showings">
@@ -33,7 +33,7 @@
         <td>
             <!--Scegli l'orario-->
             <label for="exampleDataList" class="form-label">ORARIO</label>
-            <input class="form-control" list="listaOrari" id="inputOra" placeholder="Scegli l'orario" disabled>
+            <input class="form-control" list="listaOrari" id="inputOra" placeholder="Scegli l'orario" [disabled]="timeDisabled" [(ngModel)]="timeSelected">
             <datalist id="listaOrari">
                 <div *ngFor="let film of filmList">
                     <div *ngFor="let show of film.showings">
@@ -46,7 +46,7 @@
         </td>
         <td>
             <!--Pulsante cerca-->
-            <button id="pulsante" type="button" class="btn btn-primary" onclick="avanti()" disabled>CERCA</button>
+            <button id="pulsante" type="button" class="btn btn-primary" onclick="avanti()" [disabled]="buttonDisabled">CERCA</button>
         </td>
     </tr>
 </table>

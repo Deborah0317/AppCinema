@@ -14,7 +14,7 @@ export class RestService {
       Accept: 'application/json;charset=utf-8'});
     let params = new HttpParams();
 
-    return this.httpClient.get("http://161.35.79.32:8081/getFilmCatalog",{
+    return this.httpClient.get("http://173.212.232.78:8081/getFilmCatalog",{
       headers: headers,
       observe: 'body',
       params: params,

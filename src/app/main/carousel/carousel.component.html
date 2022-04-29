@@ -1,9 +1,9 @@
-<div *ngFor="let film of filmList; let k = index" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators" *ngIf="film.image_poster && film.title && film.info_director && film.info_cast && film.info_runningtime">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="se" class="active" aria-current="true" aria-label="Copertine film"></button>
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel"> 
+  <div class="carousel-indicators" *ngIf="film.image_hero && film.title">
+    <button type="button" data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="filmList.length" class="active" aria-current="true" aria-label="Copertine film"></button>
   </div>
-  <div class="carousel-inner" *ngIf="film.image_poster && film.title && film.info_director && film.info_cast && film.info_runningtime">
-    <div class="carousel-item active" data-bs-interval="setTimeout()">
+  <div class="carousel-inner" *ngIf="film.image_hero && film.title">
+    <div class="carousel-item active">
       <div id="titoloDelFilm">
         {{film.title}}
       </div>

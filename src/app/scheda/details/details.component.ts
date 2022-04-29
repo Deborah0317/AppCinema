@@ -45,6 +45,7 @@ export class DetailsComponent implements OnInit, AfterViewInit {
       ((document.getElementById("contenitoreFilm") as HTMLElement).style as any)['background-image'] = 'url('+this.film["image_hero"]+')';
     }, 1000);
   }
+  
   ngOnInit(): void {
     this.rs.getMovieData().subscribe((response: any) => {
       this.filmList = response.films;
