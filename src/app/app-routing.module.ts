@@ -20,7 +20,7 @@ const routes: Routes = [{
   component: SchedaComponent
 },
 {
-  path:'cinema/:user,:num',
+  path:'cinema/:user',
   component: MainComponent
 }];
 
