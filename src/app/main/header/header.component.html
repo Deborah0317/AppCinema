@@ -7,11 +7,11 @@
         </li>
         <li>
             <ul class="colonne"><div *ngIf="user==true; else Not">
-              <li><a class="back" [routerLink]="['/cinema',this.user]">LOG OUT</a></li>
+              <li><a class="back" [routerLink]="['/cinema',this.user,undefined]">LOG OUT</a></li>
               <li class="li3">Benvenuto,<br>{{Data[num]['email']}}</li>
                 </div>
               <ng-template #Not><li class="li3"><button type="button" (click)="openModal(login)">LOG IN</button></li></ng-template>
-              <li class="li4"><button type="button" class="bb" onclick="location.href = 'cinema';">AL CINEMA</button></li>
+              <li class="li4"><button type="button" class="bb" onclick="['/cinema',this.user,this.num]">AL CINEMA</button></li>
             </ul>
         </li>
         </ul>
@@ -41,7 +41,7 @@
     
                   <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
     
-                  <button class="btn btn-outline-light btn-lg px-5" type="submit" (click)="checkData();">Login</button>
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit" (click)="checkData()">Login</button>
                 
                   <p class="unknown" *ngIf="un==true">I dati inseriti sono scorretti</p>
     

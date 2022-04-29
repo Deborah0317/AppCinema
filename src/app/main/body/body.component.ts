@@ -3,6 +3,7 @@ import { RestService } from 'src/app/rest.service';
 import { DataService } from 'src/app/data.service';
 import { TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,6 +19,8 @@ export class BodyComponent implements OnInit {
   s: any = false;
   t: any = false;
   id: any=3;
+  user: any;
+  num: any;
   selectedTrailer: string = "";
   
    limit(str: string, limit: any=0): string{
@@ -36,7 +39,7 @@ export class BodyComponent implements OnInit {
                //importo il servizio
                modalRef?: BsModalRef;
 
-  constructor(private rs : RestService, private ds: DataService, private modalService: BsModalService) { }
+  constructor(private rs : RestService, private ds: DataService, private modalService: BsModalService, private ar: ActivatedRoute) { }
   ngOnInit(): void {
     // this.ds.sharedId.subscribe(id => this.id = id);
    
@@ -50,6 +53,10 @@ export class BodyComponent implements OnInit {
     this.rs.getMovieData().subscribe((response: any) => {
       this.filmList = response.films;
     });
+    this.ar.params.subscribe((response: any)=>{
+      this.user= +response['user'];
+      this.num= +response['num'];
+    })
     console.log(this.filmList);
   }
 

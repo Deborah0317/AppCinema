@@ -4,6 +4,7 @@ import { HeaderComponent } from './main/header/header.component';
 import { MainComponent } from './main/main.component';
 import { SchedaComponent } from './scheda/scheda.component';
 import { DetailsComponent } from './scheda/details/details.component';
+import { BodyComponent } from './main/body/body.component';
 
 const routes: Routes = [{
   path:'',
