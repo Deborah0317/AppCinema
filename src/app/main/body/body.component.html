@@ -1,5 +1,6 @@
 <div class="body">
-  <div class="container" *ngFor="let film of filmList;"><div *ngIf="film.image_poster&&film.title&&film.info_director&&film.info_cast&&film.info_runningtime">
+  <div class="container" *ngFor="let film of filmList;">
+    <div *ngIf="film.image_poster&&film.title&&film.info_director&&film.info_cast&&film.info_runningtime">
       
       <ul class="colonne">
       <li class="l1">
@@ -7,7 +8,6 @@
       </li>
 
       <!--trailer-->
-
       <li class="l1">
         <button type="button" class="pt2" (click)="openModal(template, film)"><img src="/assets/immagini/icon1.png" alt="trailer" height="50px" width="50px"></button></li>
       

@@ -7,14 +7,14 @@
         </li>
         <li>
             <ul class="colonne">
-              <!-- <div *ngIf="user==true; else Not">
+               <div *ngIf="user==true; else Not">
               <li><a class="back" [routerLink]="['/cinema',false]">LOG OUT</a></li>
               <li class="li3">Benvenuto,<br>{{Data[num]['email']}}</li>
                 </div>
               <ng-template #Not>
                 <li class="li3"><button type="button" (click)="openModal(login)">LOG IN</button></li>
-              </ng-template> -->
-              <li class="li4"><button type="button" class="bb" [routerLink]="['/cinema']">AL CINEMA</button></li>
+              </ng-template> 
+              <li class="li4"><button type="button" class="bb" [routerLink]="['/cinema',this.user]">AL CINEMA</button></li>
             </ul>
         </li>
         </ul>

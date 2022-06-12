@@ -1,13 +1,9 @@
 <table>
-    <tr>
-        <td id="margine">
-            <!--Spazio per il colore di sfondo-->
-        </td>
-        <td>
+    <tr><td><p class="p1">.</p></td><td>
             <!--Scegli il cinema-->
             <label id="cinema" for="exampleDataList" class="form-label">CINEMA</label>
             <input class="form-control" list="datalistOptions" id="cinema" placeholder="Acireale" disabled>
-        </td>
+        </td><td><p>.</p></td>
         <td>
             <!--Scegli un film o un Extra-->
             <label for="exampleDataList" class="form-label">FILM EXTRA</label>
@@ -17,11 +13,11 @@
                     <option id="listaDeiFilmExtra" value="{{film.title}}">
                 </div>
             </datalist>
-        </td>
+        </td><td><p>.</p></td>
         <td>
             <!--Scegli la data-->
             <label for="exampleDataList" class="form-label">DATA</label>
-            <input class="form-control" list="listaDate" id="inputData" placeholder="Scegli la data" [disabled]="dateDisabled" [(ngModel)]="dateSelected">
+            <input class="form-control" list="listaDate" id="data" placeholder="Scegli la data" [disabled]="dateDisabled" [(ngModel)]="dateSelected">
             <datalist id="listaDate">
                 <div *ngFor="let film of filmList">
                     <div *ngFor="let show of film.showings">
@@ -29,11 +25,11 @@
                     </div>
                 </div>
             </datalist>
-        </td>
+        </td><td><p>.</p></td>
         <td>
             <!--Scegli l'orario-->
             <label for="exampleDataList" class="form-label">ORARIO</label>
-            <input class="form-control" list="listaOrari" id="inputOra" placeholder="Scegli l'orario" [disabled]="timeDisabled" [(ngModel)]="timeSelected">
+            <input class="form-control" list="listaOrari" id="ora" placeholder="Scegli l'orario" [disabled]="timeDisabled" [(ngModel)]="timeSelected">
             <datalist id="listaOrari">
                 <div *ngFor="let film of filmList">
                     <div *ngFor="let show of film.showings">

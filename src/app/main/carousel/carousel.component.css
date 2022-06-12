@@ -5,12 +5,16 @@ img
 
 #titoloDelFilm
 {
-    background-color: gold;
+    position: absolute;
+    bottom: 30px;
+    right: 16px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: rgba(0, 8, 16, 0.548);
     min-height: auto;
-    text-align: center;
-    font-family: "Chilanka";
+    font-family: "sans-serif";
+    color: rgb(255, 254, 247);
     font-weight: bold;
-    font-style: italic;
-    color: blue;
-    font-size: 50px;
+    font-size: 40px;
+    text-align: right;
 }
